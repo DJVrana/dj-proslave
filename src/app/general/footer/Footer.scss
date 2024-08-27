@@ -1,0 +1,116 @@
+footer {
+  padding-top: 30px;
+  background-color: #222944;
+  box-shadow: 0 -2px 5px 0px rgba(0,0,0,.2);
+}
+
+.footer-section {
+  border-bottom: 2px solid hsla(0, 0%, 100%, .1);
+}
+
+.footer-wrapper {
+  min-height: 200px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-brand {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand img {
+  height: 30px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: var(--bs-body-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--bs-primary);
+}
+
+.social-media-links {
+  align-items: center;
+}
+
+.social-media-link {
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.social-media-link:hover {
+  background-color: rgb(163, 163, 163);
+}
+
+.footer-links .icon {
+  font-size: 1.5rem;
+  aspect-ratio: 1 / 1;
+  color: #222944;
+}
+
+.copyright-wrapper {
+  text-align: center;
+  padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-brand { grid-area: footer-brand; }
+  .links1 { grid-area: links1; }
+  .links2 { grid-area: links2; }
+  .social-media-links { grid-area: social-media-links; }
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-areas:
+      'footer-brand footer-brand footer-brand'
+      'links1 links2 social-media-links';
+    gap: 10px;
+    padding-bottom: 2rem;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-links {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .footer-wrapper {
+    display: grid;
+    grid-template-areas:
+      'footer-brand footer-brand'
+      'links1 links2'
+      'social-media-links social-media-links';
+    gap: 10px;
+    padding-bottom: 2rem;
+  }
+
+  .social-media-links {
+    margin-top: 2rem;
+    align-items: normal;
+  }
+}

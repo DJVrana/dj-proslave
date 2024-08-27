@@ -1,0 +1,140 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all .4s;
+}
+
+.header-scrolled {
+  background-color: var(--bs-body-bg);
+  box-shadow: 0 5px 2px -2px rgba(0,0,0,.2);
+}
+
+.navbar-wrapper-web {
+  height: 70px;
+  padding: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-hide {
+  display: none;
+}
+
+.navbar-wrapper-web-not-scrolled {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  transition: ease 1s;
+}
+
+.navbar-brand {
+  cursor: pointer;
+}
+
+.navbar-brand img {
+  height: 100%;
+}
+
+.navbar-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--bs-body-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 5px;
+  border-bottom: 2px solid transparent;
+}
+
+.active {
+  border-bottom: 2px solid var(--bs-primary);
+}
+
+.navbar-wrapper-mobile {
+  display: none;
+  height: 60px;
+  padding: 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+  justify-content: space-between;
+}
+
+.navbar-menu-wrapper {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+}
+
+.menu-close-icon {
+  font-size: 1.8rem;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  padding: 2rem;
+  background-color: var(--bs-body-bg);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 250px;
+  border-bottom-left-radius: 30px 30px;
+}
+
+.menu-wrapper {
+  
+}
+
+.navbar-link-mobile {
+  text-decoration: none;
+  color: var(--bs-body-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+.link-icon-mobile {
+  margin-right: 0.8rem;
+}
+
+.navbar-link-mobile:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.active-mobile {
+  color: var(--bs-primary);
+  border: 0;
+}
+
+.navbar-link-mobile p {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navbar-wrapper-web {
+    display: none;
+  }
+
+  .navbar-wrapper-mobile {
+    display: flex;
+  }
+}

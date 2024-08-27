@@ -1,0 +1,135 @@
+.app-hero {
+  background-image: url(../../assets/images/hero-img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+@keyframes appAnimateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.app-hero-wrapper {
+  height: 30vh;
+  flex-direction: column;
+  padding-top: 6rem;
+}
+
+.title-section {
+  padding: 50px 0 0px 0;
+  background-color: var(--bs-body-bg);
+  z-index: 5;
+  position: relative;
+}
+
+.app-title-text-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.app-title-text {
+  font-size: 2.5rem;
+  font-family: 'Lato';
+  font-weight: 700;
+  text-shadow: 5px black;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 0.2rem solid var(--bs-primary);
+  padding: 0 2rem;
+}
+
+.app-title-text-gradient-wrapper {
+  background-image: linear-gradient(90deg, var(--bs-primary), #7ea0fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-section {
+  padding: 120px 0 160px 0;
+  background-color: var(--bs-body-bg);
+  z-index: 5;
+  position: relative;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-text-wrapper {
+  width: 45%;
+}
+
+.about-text-wrapper h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  background-image: linear-gradient(45deg, var(--bs-primary), #edf2ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-img-wrapper {
+  width: 45%;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 20px;
+  position: relative;
+}
+
+.about-img-content {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  border: 4px solid var(--bs-body-bg);
+}
+
+.about-img::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, #0fffc1, #7e0fff);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 5px;
+  box-sizing: content-box;
+  filter: blur(2rem);
+  opacity: 0.2;
+  background-size: 200% 200%;
+  animation: animateGlow 10s ease infinite;
+}
+
+@media only screen and (max-width: 991px) {
+  .about-section {
+    padding: 40px 0 160px;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+  }
+
+  .about-text-wrapper {
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .about-img-wrapper {
+    width: 100%;
+  }
+}
