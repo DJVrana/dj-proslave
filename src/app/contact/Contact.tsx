@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import './Contact.scss';
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,8 @@ import {
   faEnvelope,
   faGlobe
 } from '@fortawesome/free-solid-svg-icons';
+import emailjs from '@emailjs/browser';
+
 
 function Contact() {
 
@@ -45,12 +47,40 @@ function Contact() {
     }));
   }
 
+  const [succesSubmit, setSuccessSubmit] = useState<string>('');
+  const [errorSubmit, setErrorSubmit] = useState<string>('');
+
+  useEffect(() => emailjs.init(process.env.REACT_APP_EMAIL_PUBLIC_KEY!), []);
+
   function submitForm() {
+    setSuccessSubmit('');
+    setErrorSubmit('');
     if (!validateForm()) {
       return;
     }
+    let dateArray = userContactData.date.split("-");
 
-    console.log("uspjesno")
+    let date = `${dateArray[2]}.${dateArray[1]}.${dateArray[0]}.`
+
+    try {
+      emailjs.send(
+        process.env.REACT_APP_EMAIL_SERVICE_ID!, 
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID!,
+        {
+          fullName: userContactData.fullName,
+          phone: userContactData.phone,
+          email: userContactData.email,
+          date: date,
+          eventType: userContactData.eventType,
+          additonalNotice: userContactData.additonalNotice
+        },
+        process.env.REACT_APP_EMAIL_PUBLIC_KEY!
+      )
+
+      setSuccessSubmit("Upit je uspješno poslan, naš tim će vam se javiti u najkraćem mogućem roku!");
+    } catch (err) {
+      setErrorSubmit("Dogodila se pogreška tijekom slanja upita! Pokušajte ponovno!");
+    }
   }
 
   const [userContactDataValidation, setUserContactDataValidation] = useState<UserContactData>({
@@ -226,7 +256,7 @@ function Contact() {
                 </div>
                 <div className='contact-info-item'>
                   <FontAwesomeIcon className='contact-info-icon' icon={faEnvelope}></FontAwesomeIcon>
-                  <p>Email: djproslave@gmail.com</p>
+                  <p>Email: proslave.dj@gmail.com</p>
                 </div>
                 <div className='contact-info-item'>
                   <FontAwesomeIcon className='contact-info-icon' icon={faGlobe}></FontAwesomeIcon>
@@ -337,6 +367,17 @@ function Contact() {
                   }
                 </div>
                 <a className='btn btn-primary' onClick={() => submitForm()}>Pošalji upit</a>
+                { errorSubmit &&
+                  <p className='text-danger mt-3 text-center'>
+                    {errorSubmit}
+                  </p>
+                }
+                { succesSubmit &&
+                  <p className='text-success mt-3 text-center'>
+                    {succesSubmit}
+                  </p>
+                }
+                
               </form>
             </div>
           </div>
