@@ -80,7 +80,6 @@ function Price() {
           <table className='table table-striped'>
             <thead>
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Vrsta</th>
                 <th scope="col">Cijena</th>
               </tr>
@@ -89,7 +88,6 @@ function Price() {
               {pricing.map((item, key) => {
                 return (
                   <tr key={key}>
-                    <th className='pricing-table-item' scope="row">{ key + 1 }</th>
                     <th className='pricing-table-item'>{ item.name }</th>
                     <th className='pricing-table-item'>{ item.price }</th>
                   </tr>

@@ -8,11 +8,55 @@ import {
   faChevronLeft,
   faChevronRight,
   faXmark,
-  faMaximize
+  faMaximize,
+  faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [heroSliderImgs, setHeroSliderImgs] = useState([
+    {
+      title: "Treba vam dobar",
+      titleWrap: "DJ",
+      secondary: "Ne trebate više tražiti",
+      class: "hero-img1"
+    },
+    {
+      title: "Tražite",
+      titleWrap: "glazbu",
+      secondary: "Na jedan klik do rezervacije",
+      class: "hero-img2"
+    },
+    {
+      title: "Želite proslavu za",
+      titleWrap: "pamćenje",
+      secondary: "Neka vaše želje postanu stvarnost",
+      class: "hero-img3"
+    }
+  ]);
+
+  const [heroSliderImgActive, setHeroSliderImgActive] = useState(heroSliderImgs[0]);
+
+  useEffect(() => {
+    let num = 0;
+
+    const interval = setInterval(() => {
+
+
+      if (num < 2) {
+        num += 1;
+      } else {
+        num = 0;
+      }
+
+      setHeroSliderImgActive(heroSliderImgs[num]);
+
+    }, 8000);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
   const [listOfImages, setListOfImages] = useState([
     {
       name: "gallery01",
@@ -52,7 +96,7 @@ function Home() {
 
   function setZoomImgPrev(index: number) {
     if (index === 0) {
-      setActiveZoomImg(listOfImages.length - 1)
+      setActiveZoomImg(listOfImages.length - 1);
       return;
     }
 
@@ -61,7 +105,7 @@ function Home() {
 
   function setZoomImgNext(index: number) {
     if (index === listOfImages.length - 1) {
-      setActiveZoomImg(0)
+      setActiveZoomImg(0);
       return;
     }
 
@@ -73,7 +117,7 @@ function Home() {
     if (html) {
       html.style.overflow = isZoomActive ? "hidden" : "auto";
     }
-  }, [isZoomActive])
+  }, [isZoomActive]);
 
   const { scrollYProgress } = useScroll();
 
@@ -87,16 +131,37 @@ function Home() {
     <>
       <section className='hero-section'>
         <motion.div
-          className='hero'
+          className={
+            'hero'
+            + ' ' +
+            (heroSliderImgActive.class)
+          }
           style={{ y }}
         >
           <div className='container'>
             <div className='hero-text-wrapper d-flex justify-content-center align-items-center'>
-              <h1 className='hero-main-text mb-4'>Treba vam dobar <span className='hero-main-text-wrapper'>DJ</span></h1>
-              <h3 className='hero-secondary-text mb-4'>Ne trebate više tražiti</h3>
-              <div className='hero-phone-number-btn px-4'>
+              <h1 className='hero-main-text mb-4'>{heroSliderImgActive.title} <span className='hero-main-text-wrapper'>{heroSliderImgActive.titleWrap}</span></h1>
+              <h3 className='hero-secondary-text mb-4'>{heroSliderImgActive.secondary}</h3>
+              <a className='hero-phone-number-btn px-4' href='https://www.google.com/url?q=https%3A%2F%2Fwa.me%2F%2B3850989582676&amp;sa=D&amp;sntz=1&amp;usg=AOvVaw0S84ZOxexEzRm-QqzdAJmF'>
                 <span>098 958 2676</span>
                 <div className='hero-phone-number-btn-wrapper'></div>
+              </a>
+              <div className='indicators-hero-wrapper'>
+                {heroSliderImgs.map((item, key) => {
+                  return (
+                    <div key={key} className={
+                      'indicators-hero'
+                      + ' ' +  
+                      (
+                        item.class === heroSliderImgActive.class &&
+                        'indicator-hero-active'
+                      )
+                      }
+                      onClick={() => setHeroSliderImgActive(heroSliderImgs[key])}>
+                      <FontAwesomeIcon icon={faMinus} className='indicator-icon'></FontAwesomeIcon>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

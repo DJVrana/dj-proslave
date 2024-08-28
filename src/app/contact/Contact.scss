@@ -77,16 +77,21 @@
 .single-faq-item {
   padding-bottom: 30px;
   overflow: hidden;
+  border-radius: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .single-faq-item-text-question {
-  background-color: var(--bs-body-bg);
+  background-color: #232d51;;
   position: relative;
   z-index: 20;
-  padding-top: 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .single-faq-item-text-question p {
@@ -95,7 +100,10 @@
 }
 
 .single-faq-item-text-answer {
-  margin-right: 0rem;
+  padding: 1rem;
+  background-color: #232d51;
+  border-radius: 1rem;
+  border: 2px solid var(--bs-primary);
 }
 
 .single-faq-item-text-answer p {
@@ -104,7 +112,6 @@
 }
 
 .faq-icon-show-wrapper {
-  background-color: rgb(48, 50, 75);
   border-radius: 9999px;
   padding: 5px;
   display: flex;
@@ -120,7 +127,6 @@
  }
 
  .faq-icon-hide-wrapper {
-  background-color: rgb(48, 50, 75);
   border-radius: 9999px;
   padding: 5px;
   display: flex;

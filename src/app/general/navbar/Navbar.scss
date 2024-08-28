@@ -10,15 +10,16 @@ header {
 .header-scrolled {
   background-color: var(--bs-body-bg);
   box-shadow: 0 5px 2px -2px rgba(0,0,0,.2);
+  transition: all .5s;
 }
 
 .navbar-wrapper-web {
   height: 70px;
   padding: 1rem;
   border-bottom: 2px solid transparent;
-  transition: all .2s;
   display: flex;
   justify-content: space-between;
+  transition: all .2s;
 }
 
 .navbar-hide {

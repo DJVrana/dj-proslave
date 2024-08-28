@@ -200,24 +200,32 @@ function Contact() {
 
   const [faqShowed, setFaqShowed] = useState<number[]>([]);
 
-  function showFaq(index: number) {
-    setFaqShowed((prevState: number[]) => [...prevState, index]);
-  }
-
-  function hideFaq(index: number) {
-    setFaqShowed((prevState: number[]) => prevState.filter(item => item !== index));
+  function showHideFaq(index: number) {
+    if (!faqShowed.includes(index)) {
+      setFaqShowed((prevState: number[]) => [...prevState, index]);
+    } else {
+      setFaqShowed((prevState: number[]) => prevState.filter(item => item !== index));
+    }
   }
 
   const variants = {
     show: {
       y: "0%",
+      opacity: 1,
+      display: "block",
       transition: {
         ease: 'linear',
         duration: 0.3
       },
     },
     hide: {
-      y: "-100%"
+      y: "-100%",
+      opacity: 0,
+      display: "none",
+      transition: {
+        ease: 'linear',
+        duration: 0.3
+      },
     },
   };
   
@@ -394,28 +402,27 @@ function Contact() {
                 pitanje kontaktirajte nas.
               </p>
             </div>
-            <div>
+            <div className='faq-items-wrapper'>
               {faq.map((item, key) => {
                   return (
                     <div key={key} className='single-faq-item'>
                       <div className='single-faq-item-text-wrapper'>
-                        <div className='single-faq-item-text-question'>
+                        <div className='single-faq-item-text-question' onClick={() => showHideFaq(key)}>
                           <p>{ item.question }</p>
                           { !faqShowed.includes(key) ? 
-                        <div
-                          onClick={() => showFaq(key)}
-                          className='faq-icon-show-wrapper'
-                        >
-                          <FontAwesomeIcon className='faq-icon-show' icon={faChevronDown}></FontAwesomeIcon>
-                        </div>
-                        :
-                        <div
-                          onClick={() => hideFaq(key)}
-                          className='faq-icon-hide-wrapper'
-                        >
-                          <FontAwesomeIcon className='faq-icon-hide' icon={faMinus}></FontAwesomeIcon>
-                        </div>
-                      }
+                            <div
+
+                              className='faq-icon-show-wrapper'
+                            >
+                              <FontAwesomeIcon className='faq-icon-show' icon={faChevronDown}></FontAwesomeIcon>
+                            </div>
+                            :
+                            <div
+                              className='faq-icon-hide-wrapper'
+                            >
+                              <FontAwesomeIcon className='faq-icon-hide' icon={faMinus}></FontAwesomeIcon>
+                            </div>
+                          }
                         </div>
                         { 
                         <div>
@@ -428,10 +435,6 @@ function Contact() {
                             <p className='text-secondary pt-2'>
                               { item.answer }
                             </p>
-                            <motion.div
-                              className='faq-line-wrapper'
-                              initial={{ y: '20px' }}
-                            ></motion.div>
                           </motion.div>
                         </div>
                         }

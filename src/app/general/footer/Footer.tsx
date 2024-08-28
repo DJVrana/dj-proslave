@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faInstagram,
   faYoutube,
-  faFacebook
+  faFacebook,
+  faTiktok
 } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
 
@@ -68,24 +69,36 @@ function Footer() {
             </div>
             <div className='footer-links social-media-links'>
               <p  className='text-secondary'>Društvene mreže</p>
-              <a
-                className='social-media-link footer-link mb-3'
-                href='https://www.instagram.com/dj.proslave'
-                target='blank'>
-                <FontAwesomeIcon icon={faInstagram} className='icon' />
-              </a>
-              <a
-                className='social-media-link footer-link mb-3'
-                href='https://www.instagram.com/dj.proslave'
-                target='blank'>
-                <FontAwesomeIcon icon={faYoutube} className='icon' />
-              </a>
-              <a
-                className='social-media-link footer-link'
-                href='https://www.instagram.com/dj.proslave'
-                target='blank'>
-                <FontAwesomeIcon icon={faFacebook} className='icon' />
-              </a>
+              <div className='d-flex gap-3'>
+                <div>
+                  <a
+                    className='social-media-link footer-link mb-3'
+                    href='https://www.instagram.com/dj.proslave'
+                    target='blank'>
+                    <FontAwesomeIcon icon={faInstagram} className='icon' />
+                  </a>
+                  <a
+                    className='social-media-link footer-link mb-3'
+                    href='https://www.youtube.com/'
+                    target='blank'>
+                    <FontAwesomeIcon icon={faYoutube} className='icon' />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    className='social-media-link footer-link mb-3'
+                    href='https://www.tiktok.com/'
+                    target='blank'>
+                    <FontAwesomeIcon icon={faTiktok} className='icon' />
+                  </a>
+                  <a
+                    className='social-media-link footer-link'
+                    href='https://www.facebook.com/'
+                    target='blank'>
+                    <FontAwesomeIcon icon={faFacebook} className='icon' />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

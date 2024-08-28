@@ -1,7 +1,7 @@
 {
   "name": "dj-proslave",
   "version": "0.1.0",
-  "homepage": "https://github.com/Luks51/dj-proslave",
+  "homepage": "https://djproslave.com",
   "private": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
