@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Services.scss';
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
 import djProslaveImg from '../../assets/images/dj-proslave.webp'
 import eventDjImg from '../../assets/images/event-dj.webp'
 import djVjencanjaImg from '../../assets/images/dj-vjencanja.webp'
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Services() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/services',
+        title: "Services"
+      })
+    }
+  }, []);
 
   const { scrollYProgress } = useScroll();
 

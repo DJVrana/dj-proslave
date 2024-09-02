@@ -12,8 +12,22 @@ import {
   faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Home() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/',
+        title: "Home"
+      })
+    }
+  }, []);
+
   const [heroSliderImgs, setHeroSliderImgs] = useState([
     {
       title: "Treba vam dobar",
@@ -191,20 +205,20 @@ function Home() {
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
-                <p className='m-0 w-100'>Elektronička</p>
-                <p className='m-0 w-100'>Narodnjaci</p>
-                <p className='m-0 w-100'>Domaće</p>
-                <p className='m-0 w-100'>EX-YU</p>
+                <p className='m-0 w-100'>EDM</p>
+                <p className='m-0 w-100'>Narodno</p>
+                <p className='m-0 w-100'>Trash</p>
+                <p className='m-0 w-100'>Strani hitovi</p>
               </motion.div>
               <motion.div
                 className='home-infinity-scroll-wrapper d-flex'
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
-                <p className='m-0 w-100'>Elektronička</p>
-                <p className='m-0 w-100'>Narodnjaci</p>
-                <p className='m-0 w-100'>Domaće</p>
-                <p className='m-0 w-100'>EX-YU</p>
+                <p className='m-0 w-100'>EDM</p>
+                <p className='m-0 w-100'>Narodno</p>
+                <p className='m-0 w-100'>Trash</p>
+                <p className='m-0 w-100'>Strani hitovi</p>
               </motion.div>
             </div>
           </div>

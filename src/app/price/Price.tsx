@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Price.scss';
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Price() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/price',
+        title: "Price"
+      })
+    }
+  }, []);
 
   const { scrollYProgress } = useScroll();
 
@@ -60,7 +73,6 @@ function Price() {
       <section className='app-hero-section'>
         <motion.div
           className='app-hero'
-          style={{ y }}
         >
           <div className='container'>
             <div className='app-hero-wrapper d-flex justify-content-center align-items-center'>

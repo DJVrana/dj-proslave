@@ -8,8 +8,21 @@ import {
   faXmark,
   faMaximize
 } from '@fortawesome/free-solid-svg-icons';
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Gallery() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/gallery',
+        title: "Gallery"
+      })
+    }
+  }, []);
 
   const [listOfImages, setListOfImages] = useState([
     {
