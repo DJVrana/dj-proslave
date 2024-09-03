@@ -191,20 +191,20 @@ function Home() {
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
-                <p className='m-0 w-100'>Elektronička</p>
-                <p className='m-0 w-100'>Narodnjaci</p>
-                <p className='m-0 w-100'>Domaće</p>
-                <p className='m-0 w-100'>EX-YU</p>
+                <p className='m-0 w-100'>EDM</p>
+                <p className='m-0 w-100'>Narodno</p>
+                <p className='m-0 w-100'>Trash</p>
+                <p className='m-0 w-100'>Strani hitovi</p>
               </motion.div>
               <motion.div
                 className='home-infinity-scroll-wrapper d-flex'
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
-                <p className='m-0 w-100'>Elektronička</p>
-                <p className='m-0 w-100'>Narodnjaci</p>
-                <p className='m-0 w-100'>Domaće</p>
-                <p className='m-0 w-100'>EX-YU</p>
+                <p className='m-0 w-100'>EDM</p>
+                <p className='m-0 w-100'>Narodno</p>
+                <p className='m-0 w-100'>Trash</p>
+                <p className='m-0 w-100'>Strani hitovi</p>
               </motion.div>
             </div>
           </div>

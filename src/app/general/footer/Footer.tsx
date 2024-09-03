@@ -79,7 +79,7 @@ function Footer() {
                   </a>
                   <a
                     className='social-media-link footer-link mb-3'
-                    href='https://www.youtube.com/'
+                    href='https://www.youtube.com/@dj.proslave'
                     target='blank'>
                     <FontAwesomeIcon icon={faYoutube} className='icon' />
                   </a>
@@ -87,13 +87,13 @@ function Footer() {
                 <div>
                   <a
                     className='social-media-link footer-link mb-3'
-                    href='https://www.tiktok.com/'
+                    href='https://www.tiktok.com/@djvrana'
                     target='blank'>
                     <FontAwesomeIcon icon={faTiktok} className='icon' />
                   </a>
                   <a
                     className='social-media-link footer-link'
-                    href='https://www.facebook.com/'
+                    href='https://www.facebook.com/DJProslaveVjencanja/'
                     target='blank'>
                     <FontAwesomeIcon icon={faFacebook} className='icon' />
                   </a>
