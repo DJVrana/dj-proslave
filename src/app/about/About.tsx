@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './About.scss';
 import aboutImg from '../../assets/images/dj-playing-music-mixer.webp'
 import { motion, MotionValue, useScroll, useTransform } from 'framer-motion';
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function About() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/about',
+        title: "About"
+      })
+    }
+  }, []);
 
   const { scrollYProgress } = useScroll();
 
@@ -18,7 +31,6 @@ function About() {
       <section className='app-hero-section'>
         <motion.div
           className='app-hero'
-          style={{ y }}
         >
           <div className='container'>
             <div className='app-hero-wrapper d-flex justify-content-center align-items-center'>

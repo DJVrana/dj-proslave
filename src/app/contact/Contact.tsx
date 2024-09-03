@@ -10,9 +10,21 @@ import {
   faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 import emailjs from '@emailjs/browser';
-
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Contact() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/contact',
+        title: "Contact"
+      })
+    }
+  }, []);
 
   interface UserContactData {
     fullName: string,

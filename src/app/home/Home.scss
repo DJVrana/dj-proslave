@@ -158,6 +158,7 @@
   -webkit-mask-image: linear-gradient(90deg, transparent, #fff, #fff, transparent);
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .home-infinity-scroll-wrapper {
@@ -165,6 +166,11 @@
   font-size: 1.5rem;
   min-width: 100%;
   gap: 2rem;
+}
+
+.home-infinity-scroll-wrapper p {
+  text-align: center;
+  text-wrap: nowrap;
 }
 
 .home-about-us {
@@ -247,6 +253,8 @@
 
 .home-photo-gallery-section { 
   padding: 0 150px;
+  position: relative;
+  background-color: var(--bs-body-bg);
 }
 
 .home-photo-gallery-section-bg {

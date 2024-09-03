@@ -1,5 +1,7 @@
 .contact {
   padding: 60px 0 140px 0;
+  position: relative;
+  background-color: var(--bs-body-bg);
 }
 
 .contact-wrapper {
@@ -92,6 +94,7 @@
   justify-content: space-between;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .single-faq-item-text-question p {
@@ -116,7 +119,6 @@
   padding: 5px;
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .faq-icon-show {

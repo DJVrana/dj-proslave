@@ -12,8 +12,22 @@ import {
   faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
+import ReactGA from 'react-ga4';
 
 function Home() {
+  const [cookies] = useCookies(['cookieConsent']);
+
+  useEffect(() => {
+    if (cookies.cookieConsent === true) {
+      ReactGA.send({
+        hitType: 'pageview',
+        page: '/',
+        title: "Home"
+      })
+    }
+  }, []);
+
   const [heroSliderImgs, setHeroSliderImgs] = useState([
     {
       title: "Treba vam dobar",
