@@ -9,7 +9,9 @@ import {
   faAddressCard,
   faCamera,
   faHandshakeAngle,
-  faMoneyCheckDollar,
+  faChampagneGlasses,
+  faCakeCandles,
+  faHeart,
   faAddressBook,
   IconDefinition,
   faXmark
@@ -166,13 +168,13 @@ function Navbar() {
                     { CustomNavLinkMobile('/services', 'Usluge', faHandshakeAngle) }
                   </div>
                   <div className='navbar-link-mobile'>
-                    { CustomNavLinkMobile('/dj-za-evente', 'Eventi', faMoneyCheckDollar) }
+                    { CustomNavLinkMobile('/dj-za-evente', 'Eventi', faChampagneGlasses) }
                   </div>
                   <div className='navbar-link-mobile'>
-                    { CustomNavLinkMobile('/dj-za-proslave', 'Proslave', faMoneyCheckDollar) }
+                    { CustomNavLinkMobile('/dj-za-proslave', 'Proslave', faCakeCandles) }
                   </div>
                   <div className='navbar-link-mobile'>
-                    { CustomNavLinkMobile('/dj-za-vjencanja', 'Vjenčanja', faMoneyCheckDollar) }
+                    { CustomNavLinkMobile('/dj-za-vjencanja', 'Vjenčanja', faHeart) }
                   </div>
                   <div className='navbar-link-mobile'>
                     { CustomNavLinkMobile('/contact', 'Kontakt', faAddressBook) }
