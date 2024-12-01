@@ -97,10 +97,6 @@ header {
   border-bottom-left-radius: 30px 30px;
 }
 
-.menu-wrapper {
-  
-}
-
 .navbar-link-mobile {
   text-decoration: none;
   color: var(--bs-body-color);
@@ -130,7 +126,7 @@ header {
   margin: 0;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1400px) {
   .navbar-wrapper-web {
     display: none;
   }

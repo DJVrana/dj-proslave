@@ -25,7 +25,7 @@ function Navbar() {
     return (
       <NavLink
           className={
-            'navbar-link'
+            'navbar-link text-nowrap'
             + ' ' +
             (match  && 'active')
           }
@@ -50,7 +50,7 @@ function Navbar() {
           onClick={() => { window.scrollTo(0, 0); closeMenu(); }}
           to={to}>
         <FontAwesomeIcon className='link-icon-mobile' icon={icon}></FontAwesomeIcon>
-        <p>{ title }</p>
+        <p className='text-nowrap'>{ title }</p>
       </NavLink>
     )
   }
@@ -117,7 +117,9 @@ function Navbar() {
               { CustomNavLink('/about', 'O Nama') }
               { CustomNavLink('/gallery', 'Foto/Video') }
               { CustomNavLink('/services', 'Usluge') }
-              { CustomNavLink('/price', 'Cijena') }
+              { CustomNavLink('/dj-za-evente', 'Eventi') }
+              { CustomNavLink('/dj-za-proslave', 'Proslave') }
+              { CustomNavLink('/dj-za-vjencanja', 'Vjenčanja') }
               { CustomNavLink('/contact', 'Kontakt') }
             </div>
           </div>
@@ -164,7 +166,13 @@ function Navbar() {
                     { CustomNavLinkMobile('/services', 'Usluge', faHandshakeAngle) }
                   </div>
                   <div className='navbar-link-mobile'>
-                    { CustomNavLinkMobile('/price', 'Cijena', faMoneyCheckDollar) }
+                    { CustomNavLinkMobile('/dj-za-evente', 'Eventi', faMoneyCheckDollar) }
+                  </div>
+                  <div className='navbar-link-mobile'>
+                    { CustomNavLinkMobile('/dj-za-proslave', 'Proslave', faMoneyCheckDollar) }
+                  </div>
+                  <div className='navbar-link-mobile'>
+                    { CustomNavLinkMobile('/dj-za-vjencanja', 'Vjenčanja', faMoneyCheckDollar) }
                   </div>
                   <div className='navbar-link-mobile'>
                     { CustomNavLinkMobile('/contact', 'Kontakt', faAddressBook) }

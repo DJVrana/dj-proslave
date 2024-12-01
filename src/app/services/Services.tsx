@@ -6,6 +6,7 @@ import eventDjImg from '../../assets/images/event-dj.webp'
 import djVjencanjaImg from '../../assets/images/dj-vjencanja.webp'
 import { useCookies } from 'react-cookie';
 import ReactGA from 'react-ga4';
+import { Link } from 'react-router-dom';
 
 function Services() {
   const [cookies] = useCookies(['cookieConsent']);
@@ -55,7 +56,7 @@ function Services() {
               <img src={djProslaveImg}/>
             </div>
             <div className='services-text-wrapper'>
-              <h3>DJ Za Proslave</h3>
+              <h3>DJ za Proslave</h3>
               <p>
                 Učinite svoju proslavu nezaboravnom uz naše
                 talentirane DJ-eve. S bogatim glazbenim izborom i
@@ -64,6 +65,7 @@ function Services() {
                 i oslobodite se brige, dok mi stvaramo ritam koji će
                 vaše goste držati na podiju cijelu noć.
               </p>
+              <Link to='/dj-za-proslave' className='btn btn-primary mt-1'>Saznaj više</Link>
             </div>
           </div>
           <div className='services-wrapper'>
@@ -77,6 +79,7 @@ function Services() {
                 dok mi osiguravamo ritam koji će vaše goste držati u
                 pokretu cijelu noć! 
               </p>
+              <Link to='/dj-za-event' className='btn btn-primary mt-1'>Saznaj više</Link>
             </div>
             <div className='services-img-wrapper'>
               <img src={eventDjImg}/>
@@ -87,7 +90,7 @@ function Services() {
               <img src={djVjencanjaImg}/>
             </div>
             <div className='services-text-wrapper'>
-              <h3>DJ Za Svadbe</h3>
+              <h3>DJ za Svadbe</h3>
               <p>
                 Dodajte dašak magije Vašem vjenčanju uz naše
                 profesionalne DJ-eve. Sa širokim repertoarom glazbe
@@ -96,6 +99,7 @@ function Services() {
                 noć. Prepustite nam glazbenu kulisu i uživajte u
                 svakom trenutku vašeg posebnog dana! 
               </p>
+              <Link to='/dj-za-vjencanja' className='btn btn-primary mt-1'>Saznaj više</Link>
             </div>
           </div>
         </div>

@@ -201,7 +201,7 @@ function Home() {
             </div>
             <div className='home-infinity-scroll w-100 overflow-hidden'>
               <motion.div
-                className='home-infinity-scroll-wrapper d-flex'
+                className='home-infinity-scroll-wrapper d-flex w-100'
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
@@ -211,7 +211,7 @@ function Home() {
                 <p className='m-0 w-100'>Strani hitovi</p>
               </motion.div>
               <motion.div
-                className='home-infinity-scroll-wrapper d-flex'
+                className='home-infinity-scroll-wrapper d-flex w-100'
                 animate={{ x: ["0%", "-100%"] }}
                 transition={{ ease: "linear", repeat: Infinity, duration: 10 }}
               >
@@ -243,10 +243,13 @@ function Home() {
                 da glazba bude upravo onakva kakvu ste zamislili.
               </p>
               <p>
-                Dobrodošli na DJ Proslave! Mi smo strastveni tim DJ-eva
-                posvećen stvaranju nezaboravnih glazbenih iskustava.
-                Svaki član našeg tima ima jedinstveni stil, iskustvo i
-                spreman je ispuniti svaku glazbenu želju.
+                Naš tim razumije važnost personalizacije svakog događaja.
+                Pružamo fleksibilnost u odabiru glazbenih stilova i
+                trenutaka koji su vam najvažniji. Bilo da želite mirniji
+                ton ili energičnu zabavu, naš DJ će se pobrinuti da svaki
+                detalj odgovara vašim željama i atmosferi proslave. Naš
+                cilj je da vaša publika uživa, pleše i ponese prekrasne
+                uspomene sa sobom!
               </p>
               <Link to='/about' onClick={() => window.scrollTo(0, 0)} className='btn btn-primary mt-2'>Upoznaj nas</Link>
             </div>

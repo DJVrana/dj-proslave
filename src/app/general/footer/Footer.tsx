@@ -59,12 +59,29 @@ function Footer() {
               >
                 Usluge
               </Link>
+            </div>
+            <div className='footer-links links3'>
+              <p className='text-secondary'>Ponuda</p>
+              <Link
+                className='footer-link mb-2'
+                onClick={() => window.scrollTo(0, 0)}
+                to='/dj-za-evente'
+              >
+                Eventi
+              </Link>
+              <Link
+                className='footer-link mb-2'
+                onClick={() => window.scrollTo(0, 0)}
+                to='/dj-za-proslave'
+              >
+                Proslave
+              </Link>
               <Link
                 className='footer-link'
                 onClick={() => window.scrollTo(0, 0)}
-                to='/price'
+                to='/dj-za-vjencanja'
               >
-                Cijena
+                Vjenčanja
               </Link>
             </div>
             <div className='footer-links social-media-links'>
