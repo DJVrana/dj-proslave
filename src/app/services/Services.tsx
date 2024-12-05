@@ -70,7 +70,7 @@ function Services() {
           </div>
           <div className='services-wrapper'>
             <div className='services-text-wrapper'>
-              <h3>Event DJ</h3>
+              <h3>DJ za Evente</h3>
               <p>
                 Pred Vama je bitna ceremoija ili događaj? Sa širokim
                 glazbenim spektrom i prilagodljivim setovima, stvaramo

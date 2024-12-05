@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='/'>
+    <Router basename='/'>
       <App />
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );
 

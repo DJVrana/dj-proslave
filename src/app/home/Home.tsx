@@ -36,8 +36,8 @@ function Home() {
       class: "hero-img1"
     },
     {
-      title: "Tražite",
-      titleWrap: "glazbu",
+      title: "Stvaramo uspomene",
+      titleWrap: "koje traju!",
       secondary: "Na jedan klik do rezervacije",
       class: "hero-img2"
     },
@@ -184,12 +184,13 @@ function Home() {
       <section className='home-landing-section'>
         <div className='container home-landing-section-wrapper'>
           <h2 className='home-landing-section-text-wrapper mb-4'>
-            <span>Najteža stvar za stvaranje dobre zabave je glazba,</span>
+            <span>Ključna stvar za stvaranje dobre zabave je glazba,</span>
             <span className='home-our-djs'>uz naše DJ-eve to više nije problem</span>
           </h2>
           <p className='home-landing-section-paragraph'>
-            DJ Proslave vam omogućuje jednostavan pronalazak DJ-a za sve vaše
-            događaje, naš tim će vam sa zadovoljstvom pomoći
+            Uz DJ Proslave, uživat ćete u glazbenim trenucima koji će
+            oduševiti Vas i vaše goste. Dopustite nam da vaše želje
+            pretvorimo u stvarnost.
           </p>
         </div>
       </section>
@@ -359,8 +360,8 @@ function Home() {
               </h3>
               <p>
                 U osnovnoj ponudi naših usluga imamo DJ za Svadbe, DJ za
-                Proslave ili Event DJ. Nudimo Vam i iznajmljivanje ozvučenja
-                i rasvjete posljednje generacije za Vašu proslavu.
+                Proslave ili DJ za Evente. Nudimo Vam i iznajmljivanje
+                ozvučenja i rasvjete posljednje generacije za Vašu proslavu.
               </p>
               <p>
                 Svi naši nastupi mogu trajati od pola sata, do 12 sati. 
