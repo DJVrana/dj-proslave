@@ -104,7 +104,7 @@ function Footer() {
                 <div>
                   <a
                     className='social-media-link footer-link mb-3'
-                    href='https://www.tiktok.com/@djvrana'
+                    href='https://www.tiktok.com/@dj.proslave'
                     target='blank'>
                     <FontAwesomeIcon icon={faTiktok} className='icon' />
                   </a>
@@ -122,7 +122,7 @@ function Footer() {
       </div>
       <div className='container'>
         <div className='copyright-wrapper'>
-          <p className='m-0 text-secondary'>Copyright © 2024. Sva prava pridržana DJ Proslave</p>
+          <p className='m-0 text-secondary'>Copyright © 2025. Sva prava pridržana DJ Proslave</p>
         </div>
       </div>
     </footer>

@@ -77,13 +77,13 @@ function Gallery() {
 
   const [listOfVideos, setListOfVideos] = useState([
     {
-      src: "https://www.youtube-nocookie.com/embed/BHACKCNDMW8"
+      src: "https://www.youtube.com/embed/9lpM63Vg3U4"
     },
     {
-      src: "https://www.youtube-nocookie.com/embed/BHACKCNDMW8"
+      src: "https://www.youtube.com/embed/kAx9IMxXdbc"
     },
     {
-      src: "https://www.youtube-nocookie.com/embed/BHACKCNDMW8"
+      src: "https://www.youtube.com/embed/NwNC6rK1Lgs"
     }
   ]);
 
@@ -257,6 +257,8 @@ function Gallery() {
                 return (
                   <div key={key} className='photo-gallery-section-video'>
                     <iframe
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
                       src={video.src}>
                     </iframe>
                   </div>
