@@ -29,11 +29,11 @@ export const links: Route.LinksFunction = () => [
   { rel: "stylesheet", href: navbarStylesheet },
   { rel: "stylesheet", href: footerStylesheet },
   { rel: "stylesheet", href: fontawesomeStylesheet },
-  { rel: "icon", type: "image/png", href: "/dj-proslave/favicon-96x96.png", sizes: "96x96" },
-  { rel: "icon", type: "image/svg+xml", href: "/dj-proslave/favicon.svg" },
-  { rel: "shortcut icon", href: "/dj-proslave/favicon.ico" },
-  { rel: "apple-touch-icon", sizes: "180x180", href: "/dj-proslave/apple-touch-icon.png" },
-  { rel: "manifest", href: "/dj-proslave/site.webmanifest" },
+  { rel: "icon", type: "image/png", href: "/favicon-96x96.png", sizes: "96x96" },
+  { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+  { rel: "shortcut icon", href: "/favicon.ico" },
+  { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+  { rel: "manifest", href: "/site.webmanifest" },
 ];
 
 export const meta: Route.MetaFunction = () => {
@@ -43,7 +43,7 @@ export const meta: Route.MetaFunction = () => {
     { name: "keywords", content: "dj proslave, dj za proslave, djproslave, dj za evente, dj za vjenčanja" },
     { property: "og:title", content: "DJ Proslave" },
     { property: "og:description", content: "Pronađite DJ-a za sve vaše događaje! S pravom glazbom i vrhunskom opremom, stvaramo nezaboravne trenutke za vas i vaše goste." },
-    { property: "og:image", content: "/dj-proslave/logo.png" },
+    { property: "og:image", content: "https://djproslave.com/logo.png" },
   ];
 };
 

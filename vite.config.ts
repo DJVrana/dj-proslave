@@ -9,7 +9,7 @@ logger.warn = (msg, options) => {
 };
 
 export default defineConfig({
-  base: "/dj-proslave/",
+  base: "/",
   customLogger: logger,
   plugins: [reactRouter()],
 });

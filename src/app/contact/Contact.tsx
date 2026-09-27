@@ -120,22 +120,24 @@ function Contact() {
     };
   }, []);
 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [succesSubmit, setSuccessSubmit] = useState<string>('');
   const [errorSubmit, setErrorSubmit] = useState<string>('');
 
   useEffect(() => emailjs.init(import.meta.env.VITE_EMAIL_PUBLIC_KEY!), []);
 
-  function submitForm() {
+  async function submitForm() {
     setSuccessSubmit('');
     setErrorSubmit('');
     if (!validateForm()) {
       return;
     }
     let dateArray = userContactData.date.split("-");
-    let date = `${dateArray[2]}.${dateArray[1]}.${dateArray[0]}.`
+    let date = `${dateArray[2]}.${dateArray[1]}.${dateArray[0]}.`;
 
+    setIsSubmitting(true);
     try {
-      emailjs.send(
+      await emailjs.send(
         import.meta.env.VITE_EMAIL_SERVICE_ID!,
         import.meta.env.VITE_EMAIL_TEMPLATE_ID!,
         {
@@ -150,10 +152,23 @@ function Contact() {
           additonalNotice: userContactData.additonalNotice
         },
         import.meta.env.VITE_EMAIL_PUBLIC_KEY!
-      )
+      );
       setSuccessSubmit("Upit je uspješno poslan, naš tim će vam se javiti u najkraćem mogućem roku!");
+      setUserContactData({
+        fullName: '',
+        phone: '',
+        email: '',
+        date: '',
+        eventType: '',
+        location: '',
+        numberOfGuests: '',
+        howDidYouHear: '',
+        additonalNotice: ''
+      });
     } catch (err) {
-      setErrorSubmit("Dogodila se pogreška tijekom slanja upita! Pokušajte ponovno!");
+      setErrorSubmit("Dogodila se pogreška tijekom slanja upita! Pokušajte ponovno ili nas kontaktirajte direktno putem telefona.");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -550,10 +565,11 @@ function Contact() {
 
                 <button
                   type="button"
+                  disabled={isSubmitting}
                   onClick={() => submitForm()}
-                  className="w-full py-4 mt-2 font-extrabold tracking-[0.1em] text-sm md:text-base inline-flex justify-center items-center bg-gradient-to-r from-[color:var(--color-accent-gold)] to-[#ffdf73] text-black rounded-xl hover:scale-[1.02] transition-transform duration-300 uppercase shadow-[0_0_20px_rgba(212,175,55,0.3)]"
+                  className={`w-full py-4 mt-2 font-extrabold tracking-[0.1em] text-sm md:text-base inline-flex justify-center items-center bg-gradient-to-r from-[color:var(--color-accent-gold)] to-[#ffdf73] text-black rounded-xl hover:scale-[1.02] transition-transform duration-300 uppercase shadow-[0_0_20px_rgba(212,175,55,0.3)] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
-                  Pošalji Upit
+                  {isSubmitting ? 'Slanje upita...' : 'Pošalji Upit'}
                 </button>
 
                 {succesSubmit && (
