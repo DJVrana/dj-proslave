@@ -2,19 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './Home.scss';
 import { motion, MotionValue, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import aboutUsImg from '../../assets/images/closeup-dj-working-blue-light.webp';
-import djProslaveImg from '../../assets/images/dj-proslave.webp';
-import eventDjImg from '../../assets/images/event-dj.webp';
 import heroImg from '../../assets/images/hero.webp';
-import djVjencanjaImg from '../../assets/images/dj-vjencanja.webp';
 import eventsVideo from '../../assets/videos/events.mp4';
 import privatePartiesVideo from '../../assets/videos/private-parties.mp4';
 import weddingsVideo from '../../assets/videos/weddings.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faChevronLeft,
   faChevronRight,
-  faXmark,
-  faMaximize,
   faMinus,
   faStar
 } from '@fortawesome/free-solid-svg-icons';
