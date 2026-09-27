@@ -20,6 +20,9 @@ export default {
       "/blog/najbolja-glazba-za-evente",
     ];
   },
+  routeDiscovery: {
+    mode: "initial",
+  },
   future: {
     v8_middleware: true,
     v8_splitRouteModules: true,
