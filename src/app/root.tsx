@@ -14,6 +14,7 @@ import Navbar from './general/navbar/Navbar';
 import Footer from './general/footer/Footer';
 import FloatingContactButton from './general/floating-contact/FloatingContactButton';
 import AmbientBackground from './general/ambient-background/AmbientBackground';
+import ComingSoonOverlay from './general/coming-soon/ComingSoonOverlay';
 
 import stylesheet from "../styles.css?url";
 import navbarStylesheet from "./general/navbar/Navbar.scss?url";
@@ -70,6 +71,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <div className="overflow-x-hidden w-full relative">
+      {/* 
+        🎧 COMING SOON / STRANICA U IZRADI OVERLAY:
+        Za trajno isključivanje promijenite `ENABLE_COMING_SOON = false` u 
+        datoteci `src/app/general/coming-soon/comingSoonConfig.ts`
+        ili jednostavno zakomentirajte liniju ispod:
+      */}
+      <ComingSoonOverlay />
+
       <AmbientBackground />
       <div className='min-h-screen grid grid-rows-[auto_1fr_auto] relative z-10'>
         <Navbar />
