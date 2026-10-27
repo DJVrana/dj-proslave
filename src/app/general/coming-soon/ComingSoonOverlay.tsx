@@ -294,7 +294,7 @@ export default function ComingSoonOverlay() {
             {/* DONJI FOOTER: Copyright & Privremeni pregled za developera/klijenta */}
             <footer className="relative z-10 w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/10 text-xs text-gray-500">
               <div>
-                © {new Date().getFullYear()} DJ Proslave (DJ Vrana). Sva prava pridržana.
+                © {new Date().getFullYear()} DJ Proslave. Sva prava pridržana.
               </div>
 
               {COMING_SOON_CONFIG.allowPreviewBypass && (
